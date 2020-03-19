@@ -37,7 +37,7 @@ const App: React.FC = () => {
         <>
             <div className="app">
                 <h1>Cтатистика COVID-19</h1>
-                <p>Дата полученных данных: {lastUpdate.toLocaleDateString("ru")} {lastUpdate.toLocaleTimeString("ru")}</p>
+                <p>Последнее обновление: {lastUpdate.toLocaleDateString("ru")} {lastUpdate.toLocaleTimeString("ru")}</p>
                 <div className="app__charts">
                     <div className="app__charts-world">
                         <h2>В мире</h2>

@@ -10,7 +10,7 @@ const Contacts: React.FC = () => (
         <a href="https://github.com/maxershov">
             <img id="darkImg" alt="githubLogo" src={githubImg} />
         </a>
-        <a style={{display:"block"}} href="https://covid19.mathdro.id">COVID-19 API</a>
+        <a style={{display:"block"}} href="https://github.com/mathdroid/covid-19-api">COVID-19 API</a>
         <p>Max Ershov 2020</p>
     </div>
 );

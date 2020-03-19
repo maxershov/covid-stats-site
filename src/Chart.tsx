@@ -17,8 +17,8 @@ export interface ChartProps {
 
 const Chart: React.FC<ChartProps> = (props: ChartProps) => (
     <>
-        <PieChart width={getWidth()} height={getWidth() * 1}>
-            <Pie dataKey="value" startAngle={360} endAngle={0} data={props.data} cx={getWidth() / 2} cy={getWidth() / 2} outerRadius={getWidth() / 4} fill="#8884d8" label >
+        <PieChart width={getWidth()} height={getWidth() * 0.8}>
+            <Pie dataKey="value" startAngle={360} endAngle={0} data={props.data} cx={getWidth() / 2} cy={getWidth() / 3} outerRadius={getWidth() / 4} fill="#8884d8" label >
                 {props.data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]} />)}
             </Pie>
             <Tooltip contentStyle={{

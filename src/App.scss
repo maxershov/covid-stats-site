@@ -7,6 +7,18 @@ html {
   background-color: $darkerColor;
 }
 
+@media only screen {
+  @media (min-width: 3840px) {
+    html {
+      font-size: 3.5rem;
+    }
+  }
+  @media (min-width: 1920px) and (max-width: 3839px) {
+    html {
+      font-size: 1.5rem;
+    }
+  }
+}
 * {
   box-sizing: border-box;
   color: rgb(255, 255, 255);
@@ -16,7 +28,6 @@ html {
   a:active {
     text-decoration: none;
   }
-
 }
 
 .app {
