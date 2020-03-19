@@ -4,7 +4,7 @@ import {
 } from 'recharts';
 
 
-const COLORS = ['#ff0000', '#2b580c', '#979797'];
+const COLORS = ['#af0404', '#2b580c', '#979797'];
 
 function getWidth() {
     if (document.documentElement.clientWidth < 769) return document.documentElement.clientWidth * 0.9

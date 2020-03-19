@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Chart from './Chart';
-import TextCarousel from "./TextCarousel"
+import TextCarousel from "./TextCarousel";
+import Contacts from "./Contacts";
 
 function fetchToArray(res: Promise<any>): { name: string, value: number }[] {
-    return [{ name: "Заболевшие", value: +res.confirmed.value }, { name: "Выздоровевшие", value: +res.recovered.value }, { name: "Умершие", value: +res.deaths.value }]
+    return [{ name: "Заразилось", value: +res.confirmed.value }, { name: "Вылечилось", value: +res.recovered.value }, { name: "Умерло", value: +res.deaths.value }]
 }
 
 
@@ -32,21 +33,26 @@ const App: React.FC = () => {
             });
     }, []);
 
-    return loading ? (<div><h1>Загрузка</h1></div>) : (
-        <div className="app">
-            <div className="app__charts">
-                <div className="app__charts-world">
-                    <h2>Статистика в мире</h2>
-                    <Chart data={allData} />
+    return loading ? (<div className="loader">Loading...</div>) : (
+        <>
+            <div className="app">
+                <h1>Cтатистика COVID-19</h1>
+                <p>Дата полученных данных: {lastUpdate.toLocaleDateString("ru")} {lastUpdate.toLocaleTimeString("ru")}</p>
+                <div className="app__charts">
+                    <div className="app__charts-world">
+                        <h2>В мире</h2>
+                        <Chart data={allData} />
+                    </div>
+                    <div className="app__charts-ru">
+                        <h2>В России</h2>
+                        <Chart data={data} />
+                    </div>
                 </div>
-                <div className="app__charts-ru">
-                    <h2>Статистика в России</h2>
-                    <Chart data={data} />
-                </div>
+
+                <TextCarousel />
             </div>
-            <p>Дата полученных данных: {lastUpdate.toLocaleDateString("ru")} {lastUpdate.toLocaleTimeString("ru")}</p>
-            <TextCarousel></TextCarousel>
-        </div>
+            <Contacts />
+        </>
     );
 }
 
