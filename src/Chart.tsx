@@ -11,12 +11,6 @@ function getWidth() {
     else return document.documentElement.clientWidth * 0.4
 }
 
-// function getWidth() {
-//     if (window.innerWidth < 769) return window.innerWidth * 0.9
-//     else return window.innerWidth * 0.4
-// }
-
-
 export interface ChartProps {
     data: { name: string, value: number }[];
 }
