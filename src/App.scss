@@ -9,6 +9,21 @@ html {
   color: rgb(255, 255, 255);
 }
 
-.App {
+.app {
   padding: 1rem;
+}
+
+.app__charts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+
+  .app__charts-world {
+    flex: 1;
+  }
+  .app__charts-ru {
+    flex: 1;
+  }
 }
