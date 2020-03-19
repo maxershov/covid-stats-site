@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
     PieChart, Pie, Legend, Cell, Tooltip,
 } from 'recharts';
@@ -19,28 +19,25 @@ function getWidth() {
 
 export interface ChartProps {
     data: { name: string, value: number }[];
-    legend: boolean;
 }
 
-const Chart: React.FC<ChartProps> = (props: ChartProps) => {
-    console.log(props.data);
-    return (
-        <>
-            <PieChart width={getWidth()} height={getWidth() * 1.1}>
-                <Pie dataKey="value" startAngle={360} endAngle={0} data={props.data} cx={getWidth() / 2} cy={getWidth() / 2} outerRadius={getWidth() / 4} fill="#8884d8" label >
-                    {props.data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]} />)}
-                </Pie>
-                <Tooltip contentStyle={{
-                    color: 'white',
-                    backgroundColor: '#252525',
-                }} itemStyle={{
-                    color: 'white',
-                    backgroundColor: '#252525',
-                }} />
-                {props.legend ? <Legend /> : undefined}
-            </PieChart>
-        </>
-    )
-}
+const Chart: React.FC<ChartProps> = (props: ChartProps) => (
+    <>
+        <PieChart width={getWidth()} height={getWidth() * 1}>
+            <Pie dataKey="value" startAngle={360} endAngle={0} data={props.data} cx={getWidth() / 2} cy={getWidth() / 2} outerRadius={getWidth() / 4} fill="#8884d8" label >
+                {props.data.map((entry, index) => <Cell fill={COLORS[index % COLORS.length]} />)}
+            </Pie>
+            <Tooltip contentStyle={{
+                color: 'white',
+                backgroundColor: '#252525',
+            }} itemStyle={{
+                color: 'white',
+                backgroundColor: '#252525',
+            }} />
+            <Legend />
+        </PieChart>
+    </>
+)
+
 
 export default Chart;
