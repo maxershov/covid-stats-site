@@ -10,7 +10,8 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'app.bundle.js',
-        chunkFilename: "[name].bundle.js"
+        chunkFilename: "[name].bundle.js",
+        publicPath: '/'
     },
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.json']
@@ -67,7 +68,17 @@ module.exports = {
     },
     plugins: [new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src', 'assets', 'index.html'),
-        title: "Coron site"
+        title: "Covid Stats",
+        favicon: path.join(__dirname, "src", "assets", "favicon.ico"),
+        minify: {
+            removeComments: true,
+            collapseWhitespace: true,
+            removeRedundantAttributes: true,
+            useShortDoctype: true,
+            removeEmptyAttributes: true,
+            keepClosingSlash: true,
+            minifyURLs: true
+        }
     }),
     new CompressionPlugin({
         algorithm: "gzip"

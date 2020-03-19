@@ -8,7 +8,8 @@ module.exports = {
     entry: './src/index',
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'app.bundle.js'
+        filename: 'app.bundle.js',
+        publicPath: '/'
     },
     devServer: {
         host: myLocalHost.host,
@@ -50,7 +51,8 @@ module.exports = {
     },
     plugins: [new HtmlWebpackPlugin({
         template: path.join(__dirname, 'src', 'assets', 'index.html'),
-        title: "Coron site"
+        title: "Covid Stats",
+        favicon: path.join(__dirname, "src", "assets", "favicon.ico")
     }),
     new MiniCssExtractPlugin()]
 };
