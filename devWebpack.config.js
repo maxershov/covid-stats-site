@@ -13,7 +13,7 @@ module.exports = {
     },
     devServer: {
         host: myLocalHost.host,
-        port: 8081,
+        port: 8080,
         open: true,
         hot: true,
         watchContentBase: true,
