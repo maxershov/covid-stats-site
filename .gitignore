@@ -118,8 +118,6 @@ build
 dist
 
 
-*.png
-
 # host adress
 host.js
 monitor/stats.json
